@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+
+/*Start global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(23, 223, 223);
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: url("images/sitebg.jpg") no-repeat center fixed;
+    background-size: cover;
+
+}
+
+section{
+    padding: 6rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: seagreen;
+}
+p{
+    font-size: medium;
+    font-weight: 300;
+}
+img{
+    width: 100%;
+}
+
+/*End global*/
+
+/*Start reusable*/
+
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.section-heading h1{
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.301);
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.section-heading h1::before
+.section-heading h1::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(247, 248, 241, 0.753);
+}
+
+.section-heading h6{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+    content: '';
+}
+
+.section-heading h1::after{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    bottom: -1rem;
+    content: '';
+
+}
+
+.has-margin-right{
+    margin-right: 5rem;
+}
+
+/*End reusable*/
+
+/*Start header*/
+header{
+    width: 100%;
+    height: 100vh;
+}
+.top-nav{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 50;
+    background-color: #16162d;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: all 650ms cubic-bezier(1, 0, 0, 1);
+}
+.nav-list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    margin: 0 2rem;
+}
+.nav-link{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    padding: 1rem;
+}
+.nav-link:hover,
+.nav-link:focus{
+    background: linear-gradient(to top, #ffe838, #fd56bf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.top-nav.open{
+    top: 0;
+    border-radius: initial;
+}
+.menu-toggler{
+    position: absolute;
+    width: 5rem;
+    height: 4rem;
+    top: 5rem;
+    right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 500ms ease-out; 
+}
+.menu-toggler.open{
+    transform: rotate(-45deg);
+}
+.bar{
+    background: linear-gradient(to right, #ffe838, #fd56bf);
+    width: 100%;
+    height: 4px;
+    border: .8rem;
+}
+.bar.half{
+    width: 50%;
+}
+.bar.start{
+    transform-origin: right;
+    transition: transform 600ms cubic-bezier(0.54, -0.81, 0.57, 0.55);
+}
+
+.open .bar.start{
+        transform: rotate(-450deg) translateX(.8rem);
+}
+
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 600ms cubic-bezier(0.54, -0.81, 0.57, 0.55);
+}
+
+.open .bar.end{
+    transform: rotate(-450deg) translateX(-.8rem);
+}
+
+.landing-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.landing-text h1{
+    font-size: 10rem;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(to right, #ffe838, #fd56bf);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.landing-text h6{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+
+/*End header*/
+
+/*Start about*/
+
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 10rem;
+}
+
+.about-heading h1{
+    font-size: 8rem;
+    opacity: .5;
+}
+
+.about-heading h6{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.profile-img{
+    flex: 1;
+    margin-right: 10rem;
+}
+
+.about-details{
+    flex: 1;
+    text-align: justify;
+}
+
+.social-media{
+    margin-top: 5rem;
+}
+
+.social-media i{
+    font-size: 5rem;
+    transition: color 650ms;
+}
+
+.fa-facebook-square:hover{
+    color: rgb(255, 145, 0);
+}
+
+.fa-twitter-square:hover{
+    color: rgb(139, 0, 86);
+}
+
+.fa-whatsapp-square:hover{
+    color: darkgreen;
+}
+
+/*End about*/
+
+/*Start services*/
+
+.my-skills{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: justify;
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem -2px 2rem 0;
+}
+
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    border: 3pxs solid #ffe850;
+    background-color: #fd80bf;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+}
+
+.icon-container i{
+    color: #ffe850;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
+/*End services*/
+
+/*Start portfolio*/
+
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.portfolio-item:last-child{
+    margin-bottom: 0;
+}
+
+.profile-img{
+    width: 50rem;
+    flex: 1;
+}
+
+.portfolio-description{
+    flex: 1;
+}
+
+.portfolio-description h1{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+.portfolio-description h6{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.3;
+}
+
+.portfolio-description .cta{
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: lightcoral;
+    transition: color 650ms;
+}
+
+.portfolio-description .cta:hover{
+    color: blueviolet;
+}
+
+/*End portfolio*/
+
+/*Start timeline*/
+
+.timeline ul{
+    border-left: 4px solid yellowgreen;
+    border-radius: .8rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    position: relative;
+    padding: 5rem;
+    list-style: none;
+    text-align: center;
+    width: 70%;
+}
+
+.timeline h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.timeline .date{
+    border-bottom: 1px solid rgb(255, 255, 255, .1);
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.timeline .date:last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .date::before
+.timeline .date::after{
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline .date::before{
+    content: attr(data-date);
+    left: -20rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+}
+
+.timeline .date::after{
+    content: '';
+    box-shadow:  0 0 0 .5px #fd5df3;
+    border-radius: 100%;
+    left: -8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #313131;
+}
+
+/*End timeline*/
+
+/*Start Skills*/
+
+
+/*
+* {
+    box-sizing: border-box;
+}
+*/
+
+.efficiency{
+    background-color: rgba(106, 142, 35, 0.5);
+    width: 67%;
+    display: block;
+    margin-bottom: 10rem;
+    transform: translateX(25%);
+    border-radius: 2rem;
+}
+
+.efficiency .container {
+  width: 100%;
+  /*background-color: #ddd;*/
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.skills {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.html {width: 90%; font-size: 1.5rem; text-align: center; background-color: #4CAF50;}
+.css {width: 85%; font-size: 1.5rem; text-align: center; background-color: #2196F3;}
+.js {width: 80%; font-size: 1.5rem; text-align: center; background-color: #f44336;}
+.php {width: 80%; font-size: 1.5rem; text-align: center; background-color: #808080;}
+.laravel {width: 75%; font-size: 1.5rem; text-align: center; background-color: #1313c5;}
+.asp {width: 75%; font-size: 1.5rem; text-align: center; background-color: #bd1919;}
+
+
+/*End Skills*/
+
+/*Start contact*/
+
+.contact{
+    background-color: #222222;
+}
+
+form{
+    width: 60%;
+    margin: 0 auto;
+
+}
+
+form label{
+    font-size: 1.5rem;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 3px;
+    border: none;
+    outline-color: #fd16bf;
+}
+
+input[type="submit"]{
+    width: initial;
+    background-color: rgb(100, 27, 27);
+    color: #eeeeee;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    transition: background-color 650ms;
+}
+
+input[type="submit"]:hover{
+    color: lightslategray;
+    background-color: rgb(63, 41, 68);
+
+}
+
+/*End contact*/
+
+/*Start footer*/
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(15, 15, 15);
+    padding: 2rem 0;
+    position: relative;
+}
+
+.up{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(206, 191, 201);
+    top: -1rem;
+    right: 3rem;
+    border-radius: 100%;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.up i{
+    color: rgb(22, 21, 32);
+    font-size: 2rem;
+    margin: auto;
+}
+
+.copyright p{
+    font-size: 1.5rem;
+}
+
+/*End footer*/
+
+/*Start animations*/
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(250, 80, 100, 0.99);
+    }
+    70%{
+        box-shadow: 0 0 0 1.5rem rgba(250, 80, 100, 0);
+
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(250, 80, 100, 0.);
+
+    }
+}
+
+/*End animations*/
+
+/*Start media queries*/
+
+@media screen and (max-width: 768px){
+    body{
+        background: url("images/sitebg2.jpg") no-repeat center fixed;
+        background-size: cover;
+    
+    }
+    .landing-text h1{
+        font-size: 20rem;
+    }
+    .landing-text h6{
+        font-size: 1rem;
+    }
+    .nav-list{
+        flex-direction: column;
+    }
+    li{
+        margin: 2rem 0;
+    }
+    .nav-link{
+        font-size: 3.5rem;
+    }
+    .about-heading h1{
+        font-size: 8rem;
+    }
+    .section-heading h1{
+        font-size: 2rem;
+    }
+    .about-details .nav-list{
+        flex-direction: initial;
+    }
+    .about-details li{
+        margin: 0 2rem;
+    }
+    .icon-container{
+        width: 7rem;
+        height: 7rem;
+    }
+    .icon-container i{
+        font-size: 4rem;
+    }
+    .timeline ul{
+        margin: 0 0 0 auto;
+    }
+    .timeline .date::before{
+        left: -20rem;
+    }
+    .timeline .date::after{
+        left: -6rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .menu-toggler{
+        top: 2rem;
+        right: 1.5rem;
+    }
+    .landing-text h1{
+        font-size: 8rem;
+    }
+    .landing-text h6{
+        font-size: 1.5rem;
+    }
+    .nav-link{
+        font-size: 3.5rem;
+    }
+    .about .container{
+        flex-direction: column;
+    }
+    .profile-img{
+        margin: 0 0 7rem 0;
+    }
+    .portfolio-item{
+        flex-direction: column;
+    }
+    .portfolio-img{
+        margin: 0 0 2rem 0;
+        order: 2;
+    }
+    .timeline p{
+        font-size: 1.5rem;
+    }
+    .timeline .date::before{
+        font-size: 1.4rem;
+    }
+    form{
+        width: 100%;
+    }
+    .up{
+        right: 2rem;
+    }
+}
+
+/*End media queries*/
